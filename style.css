@@ -1,0 +1,148 @@
+/* ==========================================================================
+   Khmer Wedding Ring Ceremony Style (style.css)
+   ========================================================================== */
+
+:root {
+    --ceremony-red: #800020;    /* ពណ៌ក្រហមឈាមជ្រូកបែបបុរាណ */
+    --heritage-gold: #c5a059;   /* ពណ៌មាសព្រះពៅ */
+    --soft-cream: #fffdf9;      /* ពណ៌ផ្ទៃក្រដាសក្រែមទន់ភ្នែក */
+    --text-dark: #2c2520;       /* ពណ៌អក្សរចម្បង */
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #f5eedc;
+    font-family: 'Hanuman', serif;
+    color: var(--text-dark);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px 10px;
+    box-sizing: border-box;
+}
+
+/* ប្រអប់សន្លឹកអញ្ជើញធំ */
+.ring-container {
+    background-color: var(--soft-cream);
+    max-width: 600px;
+    width: 100%;
+    padding: 35px 30px;
+    border: 3px solid var(--heritage-gold);
+    outline: 10px double var(--heritage-gold);
+    outline-offset: -18px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+    text-align: center;
+    box-sizing: border-box;
+    border-radius: 4px;
+}
+
+/* រូបភាពលម្អក្បាលនិងបាត */
+.khmer-art-header img, 
+.khmer-art-footer img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.title-moul {
+    font-family: 'Moul', serif;
+    color: var(--ceremony-red);
+    font-size: 1.4rem;
+    line-height: 1.8;
+    margin: 25px 0 5px 0;
+}
+
+.ceremony-subtitle {
+    font-size: 0.95rem;
+    color: var(--heritage-gold);
+    font-weight: bold;
+    margin-top: 0;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+/* រចនាបថបង្ហាញឈ្មោះកូនប្រុស-កូនស្រី */
+.couple-box {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(128, 0, 32, 0.02);
+    border: 1px solid rgba(197, 160, 89, 0.25);
+    padding: 20px;
+    border-radius: 8px;
+    margin: 30px 0;
+}
+
+.groom-side, .bride-side {
+    flex: 1;
+}
+
+.couple-box .label {
+    display: block;
+    font-size: 0.85rem;
+    color: #777;
+    margin-bottom: 5px;
+}
+
+.couple-box .name {
+    font-family: 'Moul', serif;
+    color: var(--ceremony-red);
+    font-size: 1.05rem;
+}
+
+.ring-icon {
+    font-size: 2.2rem;
+    padding: 0 15px;
+    animation: ringPulse 2s infinite ease-in-out;
+}
+
+.ceremony-description {
+    font-size: 0.95rem;
+    line-height: 1.8;
+    text-align: justify;
+    padding: 0 10px;
+    margin-bottom: 30px;
+}
+
+/* ប៊ូតុងបញ្ជាអន្តរកម្ម */
+.action-section {
+    margin: 30px 0 35px 0;
+}
+
+.btn-ring-ceremony {
+    background-color: var(--ceremony-red);
+    color: white;
+    border: 2px solid var(--heritage-gold);
+    font-family: 'Hanuman', serif;
+    font-weight: bold;
+    font-size: 0.95rem;
+    padding: 14px 25px;
+    border-radius: 30px;
+    cursor: pointer;
+    box-shadow: 0 5px 15px rgba(128, 0, 32, 0.25);
+    transition: all 0.3s ease;
+}
+
+.btn-ring-ceremony:hover {
+    background-color: white;
+    color: var(--ceremony-red);
+    transform: scale(1.02);
+}
+
+/* ចលនា Ring Animation */
+@keyframes ringPulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.15); }
+    100% { transform: scale(1); }
+}
+
+/* ទម្រង់ឆ្លើយតបលើអេក្រង់ទូរស័ព្ទ */
+@media (max-width: 480px) {
+    .ring-container { padding: 25px 20px; }
+    .title-moul { font-size: 1.2rem; }
+    .couple-box { flex-direction: column; gap: 10px; }
+    .ring-icon { transform: rotate(90deg); margin: 5px 0; }
+    .btn-ring-ceremony { font-size: 0.88rem; padding: 12px 18px; }
+}
